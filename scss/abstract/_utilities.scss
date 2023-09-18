@@ -1,0 +1,103 @@
+@use './colors' as *;
+
+$colors: (
+	'dark': $clr--dark,
+	'light': $clr--light,
+	'light--gray': $clr--light,
+	'dark--gray': $clr--dark--gray,
+	'primary': $clr--primary,
+);
+
+@each $key, $val in $colors {
+	.text {
+		&--#{$key} {
+			color: $val;
+		}
+	}
+	.bg {
+		&--#{$key} {
+			background-color: $val;
+		}
+	}
+}
+
+$alignments: start, end, center, justify, left, right;
+
+@each $alignment in $alignments {
+	.t--align {
+		&--#{$alignment} {
+			text-align: $alignment;
+		}
+	}
+}
+
+// $display: (
+// 	'flex': flex,
+// 	'block': block,
+// 	'inline-block': inline-block,
+// 	'grid': grid,
+// );
+$displays: flex, block, inline-block, grid, none;
+
+@each $display in $displays {
+	.display {
+		&--#{$display} {
+			display: $display;
+		}
+	}
+}
+
+$position: (
+	'absolute': absolute,
+	'relative': relative,
+	'sticky': sticky,
+	'fixed': fixed,
+);
+
+@each $key, $val in $position {
+	.position {
+		&--#{$key} {
+			position: $val;
+		}
+	}
+}
+
+@for $i from 0 through 20 {
+    
+	// margin bottom
+	.mb--#{$i} {
+		margin-bottom: $i + rem;
+	}
+	// margin top
+	.mt--#{$i} {
+		margin-top: $i + rem;
+	}
+	// margin right
+	.mr--#{$i} {
+		margin-right: $i + rem;
+	}
+	// margin left
+	.ml--#{$i} {
+		margin-left: $i + rem;
+	}
+	// padding top, right, bottom, left
+	.p--#{$i} {
+		padding: $i + rem;
+	}
+	// padding left and right
+	.px--#{$i} {
+		padding: 0 $i + rem;
+	}
+	// padding top and bottom
+	.py--#{$i} {
+		padding: $i + rem 0;
+	}
+	// padding top
+	.pt--#{$i} {
+		padding-top: $i + rem;
+	}
+	// padding bottom
+	.pb--#{$i} {
+		padding-bottom: $i + rem;
+	}
+}

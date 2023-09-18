@@ -1,0 +1,21 @@
+@use '../abstract/' as *;
+
+.header {
+	&__wrapper {
+        display: flex;
+        justify-content: space-between;
+		nav {
+			ul {
+				display: flex;
+				gap: 4rem;
+				li {
+					a {
+						color: $clr--light;
+					}
+				}
+			}
+		}
+	}
+}
+
+
