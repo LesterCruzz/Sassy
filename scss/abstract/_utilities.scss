@@ -3,7 +3,7 @@
 $colors: (
 	'dark': $clr--dark,
 	'light': $clr--light,
-	'light--gray': $clr--light,
+	'light--gray': $clr--light--gray,
 	'dark--gray': $clr--dark--gray,
 	'primary': $clr--primary,
 );
@@ -39,10 +39,10 @@ $alignments: start, end, center, justify, left, right;
 // );
 $displays: flex, block, inline-block, grid, none;
 
-@each $display in $displays {
-	.display {
-		&--#{$display} {
-			display: $display;
+@each $d in $displays {
+	.d {
+		&--#{$d} {
+			display: $d;
 		}
 	}
 }
@@ -62,8 +62,20 @@ $position: (
 	}
 }
 
-@for $i from 0 through 20 {
-    
+@for $i from 0 through 100 {
+
+	// width
+	.w--#{$i} {
+		width: $i + rem;
+	}
+	// border radius
+	.br--#{$i} {
+		border-radius: $i + rem;
+	}
+	// max width
+	.mw--#{$i} {
+		max-width: $i + rem;
+	}
 	// margin bottom
 	.mb--#{$i} {
 		margin-bottom: $i + rem;
