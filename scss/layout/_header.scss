@@ -13,6 +13,10 @@
 					a {
 						color: $clr--light;
 					}
+					a:hover{
+						color: $clr--primary;
+						text-decoration: underline;
+					}
 				}
 			}
 		}
